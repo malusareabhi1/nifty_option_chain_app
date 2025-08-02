@@ -47,8 +47,7 @@ if st.button("⚙️ Generate and Save Access Token"):
             for line in lines:
                 key = line.strip().split("=")[0]
                 if key in env_keys:
-                    env_lines.append(f"{key}={env_keys[key]}
-")
+                    env_lines.append(f"{key}={env_keys[key]}")
                     env_keys.pop(key)
                 else:
                     env_lines.append(line)
@@ -56,8 +55,7 @@ if st.button("⚙️ Generate and Save Access Token"):
             env_lines = []
 
         for k, v in env_keys.items():
-            env_lines.append(f"{k}={v}
-")
+            env_lines.append(f"{k}={v}")
 
         with open(".env", "w") as f:
             f.writelines(env_lines)
